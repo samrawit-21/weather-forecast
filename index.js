@@ -1,19 +1,17 @@
 let apiKey = "o0334a459at0ffc9a191a1b183f3f306";
-function bahri() {
- let currentDegree = document.querySelector(".weather-Num");
-
+function bahri(response) { 
+    let currentTime = Math.round(response.data.temperature.current);
+ let currentDegree = document.querySelector("#weather-Num");
+ currentDegree.innerHTML = currentTime;
 }
-
-
-
-
 
 function family(event) {
     event.preventDefault();
     let inputsearch = document.querySelector("#search-input");
     let heading = document.querySelector("#weather-city");
-    heading.innerHTML = inputsearch.value;
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}`;
+    let city = inputsearch.value;
+    heading.innerHTML = city;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 axios.get(apiUrl).then(bahri);
 }
 
