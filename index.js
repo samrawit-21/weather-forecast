@@ -1,8 +1,20 @@
+let apiKey = "o0334a459at0ffc9a191a1b183f3f306";
+function bahri() {
+ let currentDegree = document.querySelector(".weather-Num");
+
+}
+
+
+
+
+
 function family(event) {
     event.preventDefault();
     let inputsearch = document.querySelector("#search-input");
     let heading = document.querySelector("#weather-city");
     heading.innerHTML = inputsearch.value;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}`;
+axios.get(apiUrl).then(bahri);
 }
 
 let formdate = document.querySelector("#search-form");
