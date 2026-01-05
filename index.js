@@ -3,6 +3,9 @@ function bahri(response) {
     let currentTime = Math.round(response.data.temperature.current);
  let currentDegree = document.querySelector("#weather-Num");
  currentDegree.innerHTML = currentTime;
+
+ console.log(response.data.condition.description);
+;
 }
 
 function family(event) {
@@ -13,6 +16,7 @@ function family(event) {
     heading.innerHTML = city;
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 axios.get(apiUrl).then(bahri);
+
 }
 
 let formdate = document.querySelector("#search-form");
